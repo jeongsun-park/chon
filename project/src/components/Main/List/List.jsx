@@ -27,7 +27,7 @@ export default function List() {
         setTopGradeAccommodations(null);
 
         const recentResponse = await fetch(
-          "https://port-0-chon-m3qz4omzb344e0d7.sel4.cloudtype.app/accommodations/top_date"
+          "https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/accommodations/top_date"
         );
         if (!recentResponse.ok) {
           throw new Error("Recent accommodations fetch failed");
@@ -37,7 +37,7 @@ export default function List() {
         setIsLoadingRecent(false);
 
         const topResponse = await fetch(
-          "https://port-0-chon-m3qz4omzb344e0d7.sel4.cloudtype.app/accommodations/top_grade"
+          "https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/accommodations/top_grade"
         );
         if (!topResponse.ok) {
           throw new Error("Top grade accommodations fetch failed");
