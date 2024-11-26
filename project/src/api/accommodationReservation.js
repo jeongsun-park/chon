@@ -1,15 +1,12 @@
 export const createReservation = async (reservationData) => {
   try {
-    const response = await fetch(
-      `https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/reservations/create`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(reservationData),
-      }
-    );
+    const response = await fetch(`api/reservations/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reservationData),
+    });
 
     if (!response.ok) {
       throw new Error("예약 생성 실패");

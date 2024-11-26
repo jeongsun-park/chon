@@ -15,13 +15,13 @@ export default function HostResveList() {
   const fetchReservation = async () => {
     try {
       const acc_response = await fetch(
-        `https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/accommodations/detail?accommodationId=${id}`
+        `api/accommodations/detail?accommodationId=${id}`
       );
       const acc_data = await acc_response.json();
       setAccommodationName(acc_data.name);
 
       const response = await fetch(
-        `https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/accommodations/reservations?accommodationId=${id}`
+        `api/accommodations/reservations?accommodationId=${id}`
       );
 
       const data = await response.json();

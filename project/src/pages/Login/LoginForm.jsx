@@ -39,16 +39,13 @@ const LoginForm = () => {
         return;
       }
 
-      const response = await fetch(
-        "https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/user/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("api/api/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
       console.log("📡 Server response:", data);

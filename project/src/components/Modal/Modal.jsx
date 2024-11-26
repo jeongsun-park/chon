@@ -38,7 +38,7 @@ export default function Modal({ accommodation, onClose }) {
     const fetchTimeSlots = async () => {
       try {
         const response = await fetch(
-          `https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/accommodations/timeslots?accommodationId=${accommodation._id}`
+          `api/accommodations/timeslots?accommodationId=${accommodation._id}`
         );
 
         const data = await response.json();
@@ -59,16 +59,13 @@ export default function Modal({ accommodation, onClose }) {
         url: `chonslove.netlify.app/guest/${reservationData._id}`,
       };
 
-      const response = await fetch(
-        "https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/alarm/request_guest",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(alarmData),
-        }
-      );
+      const response = await fetch("api/alarm/request_guest", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(alarmData),
+      });
 
       if (!response.ok) {
         throw new Error("알람 전송에 실패했습니다.");
@@ -89,16 +86,13 @@ export default function Modal({ accommodation, onClose }) {
         url: `chonslove.netlify.app/host/resve?id=${reservationData._id}`,
       };
 
-      const response = await fetch(
-        "https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/alarm/request_host",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(alarmData),
-        }
-      );
+      const response = await fetch("api/alarm/request_host", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(alarmData),
+      });
 
       if (!response.ok) {
         throw new Error("알람 전송에 실패했습니다.");
@@ -141,16 +135,13 @@ export default function Modal({ accommodation, onClose }) {
 
       console.log("Sending reservation data:", reservationData);
 
-      const response = await fetch(
-        "https://port-0-chon-m3y0relmf6b957af.sel4.cloudtype.app/reservations/create",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(reservationData),
-        }
-      );
+      const response = await fetch("api/reservations/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reservationData),
+      });
 
       const data = await response.json();
 
