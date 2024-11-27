@@ -17,7 +17,7 @@
   border-radius: 16px;
   width: 95%;
   max-width: 900px;
-  max-height: 900px;
+  max-height: 98vh;
   position: relative;
   overflow-y: scroll;
   scrollbar-width: none;
@@ -52,6 +52,7 @@
 
 .mainImage {
   width: 100%;
+  height: 100%;
   object-fit: cover; /* 이미지 비율 유지하면서 컨테이너에 맞추기 */
 }
 
@@ -229,6 +230,11 @@
   border: 1px solid #394a4b;
   flex-direction: column;
   gap: 8px;
+  cursor: grab;
+}
+
+.reviewItem:active {
+  cursor: grabbing;
 }
 
 .starRating {
@@ -282,7 +288,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .modalContent {
-    padding: 40px 0;
+    padding: 80px 0 40px 0;
     width: 100%;
     height: 100vh;
     max-height: none;
@@ -294,7 +300,9 @@ a:hover {
     padding: 0 20px;
   }
   .closeButton {
-    top: 5px;
+    width: 35px;
+    height: 35px;
+    top: 40px;
     right: 15px;
   }
   .reservationSection {
