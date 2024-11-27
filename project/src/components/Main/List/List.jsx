@@ -1,7 +1,9 @@
-import styles from "./List.module.css";
 import { useState, useEffect } from "react";
-import SwiperChonList from "./SwiperChonList/SwiperChonList";
 import { accommodationAPI } from "../../../api/accommodationAPI.js";
+
+import SwiperChonList from "./SwiperChonList/SwiperChonList";
+
+import styles from "./List.module.css";
 
 export default function List() {
   const [recentAccommodations, setRecentAccommodations] = useState(null);
@@ -14,7 +16,7 @@ export default function List() {
     setIsInitialLoad(true);
     const timer = setTimeout(() => {
       setIsInitialLoad(false);
-    }, 10000000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [recentAccommodations, topGradeAccommodations]);
